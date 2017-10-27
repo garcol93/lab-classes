@@ -20,11 +20,17 @@ public class Student
      */
     public Student(String fullName, String studentID)
     {
-        name = fullName;
-        id = studentID;
-        credits = 0;
-    }
+        if(fullName.length()< 4 & studentID.length()<3){     
+            System.out.println("los parametros no son correctos");
 
+        }
+        else{
+            name = fullName;
+            id = studentID;
+            credits = 0;
+        }
+    }
+    
     /**
      * Return the full name of this student.
      */
@@ -74,7 +80,7 @@ public class Student
     {
         return name.substring(0,4) + id.substring(0,3);
     }
-    
+
     /**
      * Print the student's name and ID number to the output terminal.
      */
