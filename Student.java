@@ -22,7 +22,6 @@ public class Student
     {
         if(fullName.length()< 4 & studentID.length()<3){     
             System.out.println("los parametros no son correctos");
-
         }
         else{
             name = fullName;
@@ -78,7 +77,17 @@ public class Student
      */
     public String getLoginName()
     {
-        return name.substring(0,4) + id.substring(0,3);
+        String loginName = "";
+        if(name.length() < 4 || id.length() < 3)
+        {
+            loginName = name + id;
+        }
+        else if(name.length() >= 4 && id.length() >= 3)
+        {
+            loginName = name.substring(0,4) + id.substring(0,3);
+        }
+        
+        return loginName;
     }
 
     /**
